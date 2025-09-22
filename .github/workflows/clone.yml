@@ -21,4 +21,4 @@ jobs:
       - name: Install Dependencies # You can run commands on the job's virtual machine.
         run: npm install
       - name: Run tests
-        run: npm test
+        run: npm run test
