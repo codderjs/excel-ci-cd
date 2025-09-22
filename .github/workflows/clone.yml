@@ -1,0 +1,12 @@
+name: Deploy Pipeline
+on: [push, workflow_dispatch]
+
+jobs:
+  test: # jobs name
+    runs-on: ubuntu-latest #  is run on ubuntu
+    steps:
+      - name: "Get Code"
+        run: |
+          echo "cloning repo...."
+          echo "${{toJson(github)}}"
+          git clone https://github.com/${{github.repository}}.git
