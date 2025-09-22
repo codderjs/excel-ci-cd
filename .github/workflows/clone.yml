@@ -5,12 +5,20 @@ jobs:
   test: # jobs name
     runs-on: ubuntu-latest #  is run on ubuntu
     steps:
-      - name: "Get Code"
+      - name: Get Code
         uses: actions/checkout@v5
         # run or users --- use one.
         # run: |
         #   echo "cloning repo...."
         #   echo "${{toJson(github)}}"
         #   git clone https://github.com/${{github.repository}}.git
-      - name: "Set up Node.js"
+      - name: Set up Node.js
         uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: print node version
+        run: node -v
+      - name: Install Dependencies # You can run commands on the job's virtual machine.
+        run: npm install
+      - name: Run tests
+        run: npm test
