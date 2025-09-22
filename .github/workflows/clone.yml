@@ -6,7 +6,11 @@ jobs:
     runs-on: ubuntu-latest #  is run on ubuntu
     steps:
       - name: "Get Code"
-        run: |
-          echo "cloning repo...."
-          echo "${{toJson(github)}}"
-          git clone https://github.com/${{github.repository}}.git
+        uses: actions/checkout@v5
+        # run or users --- use one.
+        # run: |
+        #   echo "cloning repo...."
+        #   echo "${{toJson(github)}}"
+        #   git clone https://github.com/${{github.repository}}.git
+      - name: "Set up Node.js"
+        uses: actions/setup-node@v5
