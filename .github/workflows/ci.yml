@@ -1,0 +1,9 @@
+name: CI Pipeline # use any name.
+on: [push]
+
+jobs:
+  greet: # jobs name is greet
+    runs-on: ubuntu-latest # greet is run on ubuntu
+    steps:
+      - name: "greet user" # Correct spacing after dash
+        run: echo "Hello world!"
