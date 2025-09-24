@@ -61,7 +61,7 @@ jobs:
 
   deploy: # jobs name deploy --is use to deploy  the project.
     runs-on: ubuntu-latest #  is run on ubuntu it run separate inviroments.
-    needs: test # deploy waits until build finishes
+    needs: build # deploy waits until build finishes
     steps:
       - name: Download Dist Artifact
         uses: actions/download-artifact@v5
