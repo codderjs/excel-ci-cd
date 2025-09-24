@@ -77,7 +77,7 @@ const AddUser = () => {
 
                 {/* ID */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">ID</label>
+                    <label htmlFor="id" className="block text-sm font-medium text-gray-700 mb-1">ID</label>
                     <input
                         type="text"
                         id="id"
@@ -95,7 +95,7 @@ const AddUser = () => {
 
                 {/* Username */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                    <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">Username</label>
                     <input
                         type="text"
                         id="username"
@@ -115,7 +115,7 @@ const AddUser = () => {
 
                 {/* Email */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                     <input
                         type="email"
                         id="email"
@@ -135,7 +135,7 @@ const AddUser = () => {
 
                 {/* Age */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1"> Age</label>
+                    <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-1"> Age</label>
                     <input
                         type="number"
                         id="age"
