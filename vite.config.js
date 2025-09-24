@@ -10,4 +10,5 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/setupTests.js", // path to your setup file
   },
+  base: "/excel-ci-cd/" // Repositories name
 })
