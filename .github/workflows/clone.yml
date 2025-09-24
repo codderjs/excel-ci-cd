@@ -2,8 +2,8 @@ name: Deploy excel Pipeline
 on: [push, workflow_dispatch]
 
 jobs:
-  test: # jobs name
-    runs-on: ubuntu-latest #  is run on ubuntu
+  test: # jobs name test --is use to test react components
+    runs-on: ubuntu-latest #  is run on ubuntu it run separate inviroments.
     steps:
       - name: Get Code
         uses: actions/checkout@v5
@@ -22,3 +22,18 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm run test
+  deploy: # jobs name deploy --is use to deploy  the project.
+    runs-on: ubuntu-latest #  is run on ubuntu it run separate inviroments.
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Install Dependencies # You can run commands on the job's virtual machine.
+        run: npm ci
+      - name: Build Project
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploy successfully"
