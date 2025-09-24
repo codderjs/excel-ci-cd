@@ -18,6 +18,11 @@ jobs:
           node-version: 24
       - name: print node version
         run: node -v
+      - name: Cache node_modules and dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependencies # You can run commands on the job's virtual machine.
         run: npm install
       - name: Run tests
@@ -32,6 +37,11 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 24
+      - name: Cache node_modules and dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependencies # You can run commands on the job's virtual machine.
         run: npm ci
       - name: Build Project

@@ -1,5 +1,5 @@
 name: CI Pipeline # use any name.
-on: [push]
+on: [workflow_dispatch]
 
 jobs:
   greet: # jobs name is greet
